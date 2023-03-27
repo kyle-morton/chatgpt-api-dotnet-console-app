@@ -30,8 +30,13 @@ var responseStr = await response.Content.ReadAsStringAsync();
 try
 {
     var dynamicData = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(responseStr);
+    var answer = dynamicData.choices[0].text;
+    
     Console.ForegroundColor = ConsoleColor.Green;
-    Console.WriteLine($"---> API Response is: {dynamicData.choices[0].text}");
+    Console.WriteLine($"---> API Response is: {answer}");
+
+    TextCopy.ClipboardService.SetText(answer);
+
     Console.ResetColor();
 }
 catch (System.Exception ex)
