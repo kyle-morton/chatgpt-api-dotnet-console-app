@@ -2,6 +2,9 @@
 using System.Text.Json;
 using AskApp;
 
+
+// run via -> dotnet run -- "prompt to chatGPT goes here"
+
 if (args.Length == 0)
 {
     Console.WriteLine("Arguments are required to run this application. Please close and try again.");
